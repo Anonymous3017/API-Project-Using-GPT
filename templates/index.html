@@ -1,65 +1,75 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <title>QR Code Generator</title>
     <style>
-        /* Add a dark gray background color */
+        /* Add a dark gray background color to the page */
         body {
-            background-color: #333;
+            background-color: #333333;
         }
 
-        /* Add some padding and center the form on the page */
+        /* Center the form container on the page */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Match the height of the viewport */
+            width: 100vw; /* Match the width of the viewport */
+        }
+
+        /* Style the form */
         form {
-            padding: 40px;
-            margin: 0 auto;
-            width: 80%;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #cccccc;
         }
 
-        /* Style the input fields */
-        input[type=text],
-        input[type=file] {
+        /* Style the form inputs */
+        input[type='text'], input[type='file'] {
+            width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
+            border-radius: 4px;
             box-sizing: border-box;
-            width: 100%;
         }
 
         /* Style the submit button */
-        input[type=submit] {
+        input[type='submit'] {
+            width: 100%;
             background-color: #4CAF50;
             color: white;
             padding: 14px 20px;
             margin: 8px 0;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
-            width: 100%;
         }
 
-        /* Add hover effect for the submit button */
-        input[type=submit]:hover {
-            opacity: 0.8;
+        /* Change the background color of the submit button on hover */
+        input[type='submit']:hover {
+            background-color: #45a049;
         }
 
         /* Style the labels */
         label {
-            color: #fff;
-            font-size: 16px;
+            color: #cccccc;
         }
     </style>
 </head>
-
 <body>
-    <form action="http://127.0.0.1:5000/qrcode" method="post" enctype="multipart/form-data">
-        <label for="url">URL:</label>
-        <input type="text" id="url" name="url" placeholder="Enter URL here">
-        <br>
-        <label for="custom_img">Custom Image:</label>
-        <input type="file" id="custom_img" name="custom_img">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="form-container">
+        <form action="http://127.0.0.1:5000/qrcode" method="post" enctype="multipart/form-data">
+            <label for="url">URL:</label>
+            <input type="text" id="url" name="url" placeholder="Enter URL here">
+            <br>
+            <label for="custom_img">Custom Image:</label>
+            <input type="file" id="custom_img" name="custom_img">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
-
 </html>
