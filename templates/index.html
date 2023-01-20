@@ -1,8 +1,56 @@
 <!DOCTYPE html>
 <html>
 
-<body>
+<head>
+    <style>
+        /* Add a dark gray background color */
+        body {
+            background-color: #333;
+        }
 
+        /* Add some padding and center the form on the page */
+        form {
+            padding: 40px;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        /* Style the input fields */
+        input[type=text],
+        input[type=file] {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        /* Style the submit button */
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Add hover effect for the submit button */
+        input[type=submit]:hover {
+            opacity: 0.8;
+        }
+
+        /* Style the labels */
+        label {
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
     <form action="http://127.0.0.1:5000/qrcode" method="post" enctype="multipart/form-data">
         <label for="url">URL:</label>
         <input type="text" id="url" name="url" placeholder="Enter URL here">
@@ -12,7 +60,6 @@
         <br><br>
         <input type="submit" value="Submit">
     </form>
-
 </body>
 
 </html>
